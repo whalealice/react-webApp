@@ -82,7 +82,7 @@ const list_data = {
         },
         {
             title: "读读日报24小时热门TOP4.北京出现一堆［性别友善］厕所",
-            image: "http://p1.zhimg.com/45/b9/45b9f057fc1957ed2c946814342c0f02.jpg",
+            image: require('../images/3.jpg'),
             ga_prefix: "052315",
             type: 0,
             id: 3930883
