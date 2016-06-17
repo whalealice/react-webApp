@@ -1,0 +1,10 @@
+.Sidebar{
+	width: 3.8rem;
+	height: 100%;
+	background:#232a32;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: -2.8rem;
+}
+ 

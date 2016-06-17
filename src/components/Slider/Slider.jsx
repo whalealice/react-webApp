@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 
 import '../Slider/Slider.css';
-import SliderItem from './SliderItem/SliderItem.jsx';
-import SliderDots from './SliderDots/SliderDot.jsx';
+import SliderItem from './SliderItem.jsx';
+import SliderDots from './SliderDot.jsx';
 
 var SlideInter;
 

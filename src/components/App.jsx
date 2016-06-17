@@ -1,10 +1,11 @@
-import React,{Component} from 'react';
+import React,{Component} from 'react'
 
-import '../common.css';
-import './fontSize.jsx'
-import Slider from './Slider/Slider.jsx';
-import Applist from './Applist/Applist.jsx';
-import Header from './Header/Header.jsx';
+import Slider from './Slider/Slider.jsx'
+import Applist from './Applist/Applist.jsx'
+import Header from './Header/Header.jsx'
+import Sidebar from './Sidebar/Sidebar.jsx'
+import './App.css'
+import Home from '../images/icon.png'
 
 const list_data = {
     date: "20160616",
@@ -256,19 +257,28 @@ const last_data = {
     ]
 }
 export default class App extends Component{
+    
 	render(){
 		return(
-			<div>
-				<Slider item={list_data} 
-					dots = {true} //是否有按钮
-					continue = {true}//是否循环滚动
-				  	autoPlay={true} //是否自动播放
-				/>
-                <Applist  item={list_data} title={false}/>
-                <Applist  item={now_data} title={true}/>
-                <Applist  item={last_data} title={true}/>
-               
+			<div id="App">
+                <Sidebar/>
+                <div id="Header">
+                    <img className="Home" src={Home} /> 
+                    <h2>今日热闻</h2>
+                </div>
 
+                <div className="Main">
+                    <Slider item={list_data} 
+                        dots = {true} //是否有按钮
+                        continue = {true}//是否循环滚动
+                        autoPlay={true} //是否自动播放
+                    />
+                    <div className="ListWrap">
+                        <Applist  item={list_data} title={false}/>
+                        <Applist  item={now_data} title={true}/>
+                        <Applist  item={last_data} title={true}/>
+                    </div>
+                </div>
 			</div>
 		)
 	}
