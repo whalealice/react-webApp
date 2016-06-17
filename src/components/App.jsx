@@ -2,7 +2,6 @@ import React,{Component} from 'react'
 
 import Slider from './Slider/Slider.jsx'
 import Applist from './Applist/Applist.jsx'
-import Header from './Header/Header.jsx'
 import Sidebar from './Sidebar/Sidebar.jsx'
 import './App.css'
 import Home from '../images/icon.png'
