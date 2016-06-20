@@ -1,18 +1,25 @@
 import React,{Component} from 'react'
 
 import './Sidebar.css'
-import SiderLog from './SiderLog.jsx'
 import Add from '../../images/add.png'
-import SiderItem from './SiderItem.jsx'
+// import SiderItem from './SiderItem.jsx'
+import My from "../../images/my.jpg"
 
 export default class Sidebar extends Component{
 	constructor(props) {
-	  super(props);
-	
+	  	super(props);
+
+		this.state = {
+	  		liked:true
+	  	};
 	}
-	
+	handClick(){
+		
+		this.setState({liked: !this.state.liked});
+		
+	}
 	render(){
-		{/*let title = ['首页','日常心理学','用户推荐','电影日报','不许无聊','设计日报','大公司设计','财经日报','互联网安全']
+		let title = ['首页','日常心理学','用户推荐','电影日报','不许无聊','设计日报','大公司设计','财经日报','互联网安全']
 			
 		var text = this.state.liked ? 'like' : 'active';
 
@@ -23,11 +30,30 @@ export default class Sidebar extends Component{
 					<img src={Add}/>
 				</li>
 			)
-		})*/}
+		})
 		return (
 			<div className="Sidebar">
-				<SiderLog/>
-				<ul className="SiderItem"><SiderItem/></ul>
+				<div>
+					<div className="SiderLog">
+						<img src={My}/>
+						<p>请登录</p>
+					</div>	
+					<ul className="SiderList">
+						<li>
+							<span></span>
+							<p>收藏</p>
+						</li>
+						<li>
+							<span></span>
+							<p>消息</p>
+						</li>
+						<li>
+							<span></span>
+							<p>设置</p>
+						</li>
+					</ul>
+				</div>
+				<ul className="SiderItem" onClick={e=>this.handClick(e)}>{SiderItem}</ul>
 			</div>
 		)
 	}
