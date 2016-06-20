@@ -4,7 +4,8 @@ import Slider from './Slider/Slider.jsx'
 import Applist from './Applist/Applist.jsx'
 import Sidebar from './Sidebar/Sidebar.jsx'
 import './App.css'
-import Home from '../images/icon.png'
+import Home from '../images/home.png'
+import './api/api.jsx'
 
 const list_data = {
     date: "20160616",
@@ -255,24 +256,34 @@ const last_data = {
         }
     ]
 }
+
+
 export default class App extends Component{
+    constructor(props) {
+        super(props);
+        this.handleClickHome = this.handleClickHome.bind(this)
+    }
+    handleClickHome(){
+        this.refs.sidebar.className();
+        this.props.actions.open_Sider()
+    }
     
 	render(){
 		return(
 			<div id="App">
-                <Sidebar/>
-                <div id="Header">
-                    <img className="Home" src={Home} /> 
+                <Sidebar ref="sidebar"/> {/*侧边栏导航*/}
+                <div id="Header"> {/*头部固定导航*/}
+                    <img className="Home" src={Home} handleClick={this.handleClickHome}/> 
                     <h2>今日热闻</h2>
                 </div>
 
-                <div className="Main">
+                <div className="Main"> {/*焦点图*/}
                     <Slider item={list_data} 
                         dots = {true} //是否有按钮
                         continue = {true}//是否循环滚动
                         autoPlay={true} //是否自动播放
                     />
-                    <div className="ListWrap">
+                    <div className="ListWrap">  {/*焦点图下方列表*/}
                         <Applist  item={list_data} title={false}/>
                         <Applist  item={now_data} title={true}/>
                         <Applist  item={last_data} title={true}/>
