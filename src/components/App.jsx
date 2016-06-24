@@ -261,34 +261,41 @@ const last_data = {
 export default class App extends Component{
     constructor(props) {
         super(props);
-        this.handleClickHome = this.handleClickHome.bind(this)
+        this.handleClickHome = this.handleClickHome.bind(this);
+        this.state = {
+            active:true
+        };
     }
     handleClickHome(){
-        this.refs.sidebar.className();
-        this.props.actions.open_Sider()
+       this.setState({active: !this.state.active});
     }
     
 	render(){
+        var text = this.state.active ? 'Sidebar' : 'Sidebar-active';
+
 		return(
 			<div id="App">
-                <Sidebar ref="sidebar"/> {/*侧边栏导航*/}
-                <div id="Header"> {/*头部固定导航*/}
-                    <img className="Home" src={Home} handleClick={this.handleClickHome}/> 
+
+                <Sidebar ref="sidebar" className={text}/> {/*侧边栏导航*/}
+
+                <div className="Header"> {/*头部固定导航 Header-pus*/}
+                    <img className="Home" src={Home} onClick={this.handleClickHome}/> 
                     <h2>今日热闻</h2>
                 </div>
 
-                <div className="Main"> {/*焦点图*/}
+                <div id="Main"> {/*焦点图 Main-push*/}
                     <Slider item={list_data} 
                         dots = {true} //是否有按钮
                         continue = {true}//是否循环滚动
                         autoPlay={true} //是否自动播放
                     />
-                    <div className="ListWrap">  {/*焦点图下方列表*/}
+                    <div className="ListWrap">  {/*焦点图下方列表 title={false}是否有标题*/}
                         <Applist  item={list_data} title={false}/>
                         <Applist  item={now_data} title={true}/>
                         <Applist  item={last_data} title={true}/>
                     </div>
                 </div>
+
 			</div>
 		)
 	}

@@ -2,7 +2,6 @@ import React,{Component} from 'react'
 
 import './Sidebar.css'
 import Add from '../../images/add.png'
-// import SiderItem from './SiderItem.jsx'
 import My from "../../images/my.jpg"
 
 export default class Sidebar extends Component{
@@ -10,27 +9,29 @@ export default class Sidebar extends Component{
 	  	super(props);
 
 		this.state = {
-	  		liked:true
+	  		class:''
 	  	};
 	}
-	handClick(){
-		
-		this.setState({liked: !this.state.liked});
+	handClick(e){
+		 
+		// this.setState({liked:!e.target.className});
+		if (e.target.className == '') {
+			e.target.className = 'active'
+		}
 		
 	}
 	render(){
 		let title = ['首页','日常心理学','用户推荐','电影日报','不许无聊','设计日报','大公司设计','财经日报','互联网安全']
-			
-		var text = this.state.liked ? 'like' : 'active';
-
+		
 		let SiderItem = title.map((title,i)=>{
 			return (
-				<li className={text} key={i} onClick={this.handleClick}>
+				<li className={this.state.class} key={i} onClick={e=>this.handClick(e)}>
 					<p>{title}</p>
 					<img src={Add}/>
 				</li>
 			)
 		})
+
 		return (
 			<div className="Sidebar">
 				<div>
@@ -53,7 +54,7 @@ export default class Sidebar extends Component{
 						</li>
 					</ul>
 				</div>
-				<ul className="SiderItem" onClick={e=>this.handClick(e)}>{SiderItem}</ul>
+				<ul className="SiderItem">{SiderItem}</ul>
 			</div>
 		)
 	}

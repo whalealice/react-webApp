@@ -1,4 +1,4 @@
-#Header{
+.Header{
 	position: fixed;
 	top:0;
 	left: 0;
@@ -10,6 +10,9 @@
 	text-align: center;
 	font-size: 0.26rem;
 }
+.Header-push{
+	left: 3.8rem;
+}
 .Home{
 	position: absolute;
 	top: 0.22rem;
@@ -17,4 +20,10 @@
 	height: 0.28rem;
 	width: 0.38rem;
 	background:
+}
+#Main{
+	transform: translate3d(0,0,0)
+}
+#Main-push{
+	transform: translate3d(3.8rem,0,0)
 }

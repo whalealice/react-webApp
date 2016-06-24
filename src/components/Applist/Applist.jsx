@@ -1,6 +1,5 @@
 import React,{Component} from 'react'
 import './Applist.css'
-import AppItem from './ListItem.jsx'
 import ItemTitle from './ItemTitle.jsx'
 
 
@@ -12,7 +11,10 @@ export default class Applist extends Component{
 		let opts = this.props.item.stories;
 		let listNodes = opts.map((item,i)=>{
 			return(
-				<AppItem item={item} key={i}/>
+				<li item={item} key={i} className="list-item" >
+					<p>{item.title}</p>
+					<img src={item.images[0]}/>
+				</li>
 			)
 		})
 		let date = this.props.item.date
