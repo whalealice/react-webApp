@@ -3,32 +3,41 @@ import React,{Component} from 'react'
 import './Sidebar.css'
 import Add from '../../images/add.png'
 import My from "../../images/my.jpg"
+class SideCells extends Component{
+	constructor(props) {
+	  	super(props);
+	  	this.state = {
+	 	  	liked:true
+	   	};
+	}
+	handClick(e){
+		this.setState({liked: !this.state.liked});
+		// if (e.target.className == '') {
+		// 	e.target.className = 'active'
+		// }
+		
+	}
+	render(){
+		var text = this.state.liked ? 'like' : 'active';
+		return (
+			<li className={text} onClick={e=>this.handClick(e)}>
+					<p>{this.props.title}</p>
+					<img src={Add}/>
+				</li>
+			)
+	}
 
+}
 export default class Sidebar extends Component{
 	constructor(props) {
 	  	super(props);
-
-		this.state = {
-	  		class:''
-	  	};
-	}
-	handClick(e){
-		 console.log(this.refs);
-		// this.setState({liked:!e.target.className});
-		if (e.target.className == '') {
-			e.target.className = 'active'
-		}
-		
 	}
 	render(){
 		let title = ['首页','日常心理学','用户推荐','电影日报','不许无聊','设计日报','大公司设计','财经日报','互联网安全']
 		
 		let SiderItem = title.map((title,index)=>{
 			return (
-				<li className={this.state.class} key={index} refs={'aaa'+index} 	>
-					<p>{title}</p>
-					<img src={Add}/>
-				</li>
+				<SideCells key={index} title={title} data-key={index} ref={'aaa'+index}/>
 			)
 		})
 
