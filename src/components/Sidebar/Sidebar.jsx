@@ -13,7 +13,7 @@ export default class Sidebar extends Component{
 	  	};
 	}
 	handClick(e){
-		 
+		 console.log(this.refs);
 		// this.setState({liked:!e.target.className});
 		if (e.target.className == '') {
 			e.target.className = 'active'
@@ -23,9 +23,9 @@ export default class Sidebar extends Component{
 	render(){
 		let title = ['首页','日常心理学','用户推荐','电影日报','不许无聊','设计日报','大公司设计','财经日报','互联网安全']
 		
-		let SiderItem = title.map((title,i)=>{
+		let SiderItem = title.map((title,index)=>{
 			return (
-				<li className={this.state.class} key={i} onClick={e=>this.handClick(e)}>
+				<li className={this.state.class} key={index} refs={'aaa'+index} 	>
 					<p>{title}</p>
 					<img src={Add}/>
 				</li>
