@@ -1,4 +1,4 @@
-.Header{
+.Header,.Header-push{
 	position: fixed;
 	top:0;
 	left: 0;
@@ -9,9 +9,11 @@
 	width: 100%;
 	text-align: center;
 	font-size: 0.26rem;
+	transition:left 1s;
 }
 .Header-push{
 	left: 3.8rem;
+	transition:left 1s;
 }
 .Home{
 	position: absolute;
@@ -19,11 +21,12 @@
 	left: 0.25rem;
 	height: 0.28rem;
 	width: 0.38rem;
-	background:
 }
 #Main{
-	transform: translate3d(0,0,0)
+	transform: translate3d(0,0,0);
+	transition:1s;
 }
 #Main-push{
-	transform: translate3d(3.8rem,0,0)
+	transform: translate3d(3.8rem,0,0);
+	transition:1s;
 }

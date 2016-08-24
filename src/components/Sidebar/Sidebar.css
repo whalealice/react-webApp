@@ -5,10 +5,18 @@
 	z-index: 110;
 	position: fixed;
 	top: 0;
-	transform: translate3d(0,0,0)
+	left:-3.8rem;
+	transition: left 1s;
 }
 .Sidebar-active{
-	transform: translate3d(0,0,0)
+	width: 3.8rem;
+	height: 100%;
+	background:#232a32;
+	z-index: 110;
+	position: fixed;
+	top: 0;
+	transition:1s;
+	left:0;
 }
 .SiderLog{
 	height: 0.9rem;

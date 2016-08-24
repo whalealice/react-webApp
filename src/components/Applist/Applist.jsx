@@ -21,7 +21,7 @@ export default class Applist extends Component{
 
 		return(
 			<div className="Applist">
-				{this.props.title?<ItemTitle date={date}/>:null}
+				{this.props.title?<ItemTitle date={date}/>:null}{/*是否有导航条title={false}*/}
 				<ul>
 					{listNodes}
 				</ul>

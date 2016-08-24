@@ -33,16 +33,17 @@ export default class Sidebar extends Component{
 	  	super(props);
 	}
 	render(){
-		let title = ['首页','日常心理学','用户推荐','电影日报','不许无聊','设计日报','大公司设计','财经日报','互联网安全']
+		let titles = this.props.title;
+		let title = ['首页','日常心理学','用户推荐','电影日报','不许无聊','设计日报','大公司设计','财经日报','互联网安全'];
 		
 		let SiderItem = title.map((title,index)=>{
 			return (
 				<SideCells key={index} title={title} data-key={index} ref={'aaa'+index}/>
 			)
-		})
+		});
 
 		return (
-			<div className="Sidebar">
+			<div className={titles}>
 				<div>
 					<div className="SiderLog">
 						<img src={My}/>
