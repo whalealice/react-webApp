@@ -295,6 +295,8 @@ export default class App extends Component{
                     />
                     <div className="ListWrap">  {/*焦点图下方列表 title={false}是否有标题*/}
                         <Applist item={list_data} title={false}/>
+                        <Applist item={list_data} title={true}/>
+                        <Applist item={list_data} title={true}/>
                     </div>
                 </div>
 			</div>

@@ -5,8 +5,8 @@
 	z-index: 110;
 	position: fixed;
 	top: 0;
-	left:-3.8rem;
-	transition: left 1s;
+	-webkit-transform: translate3d(-3.8rem,0,0);
+	transition:-webkit-transform 1s;
 }
 .Sidebar-active{
 	width: 3.8rem;
@@ -15,8 +15,8 @@
 	z-index: 110;
 	position: fixed;
 	top: 0;
-	transition:1s;
-	left:0;
+	-webkit-transform: translate3d(0,0,0);
+	transition:-webkit-transform 1s;
 }
 .SiderLog{
 	height: 0.9rem;

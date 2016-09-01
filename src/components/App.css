@@ -1,7 +1,6 @@
 .Header,.Header-push{
 	position: fixed;
 	top:0;
-	left: 0;
 	z-index: 100;
 	height: 0.8rem;
 	line-height: 0.8rem;
@@ -9,11 +8,12 @@
 	width: 100%;
 	text-align: center;
 	font-size: 0.26rem;
-	transition:left 1s;
+	-webkit-transform: translate3d(0,0,0);
+	transition:-webkit-transform 1s;
 }
 .Header-push{
-	left: 3.8rem;
-	transition:left 1s;
+	-webkit-transform: translate3d(3.8rem,0,0);
+	transition:-webkit-transform 1s;
 }
 .Home{
 	position: absolute;
@@ -23,10 +23,10 @@
 	width: 0.38rem;
 }
 #Main{
-	transform: translate3d(0,0,0);
-	transition:1s;
+	-webkit-transform: translate3d(0,0,0);
+	transition:-webkit-transform 1s;
 }
 #Main-push{
-	transform: translate3d(3.8rem,0,0);
-	transition:1s;
+	-webkit-transform: translate3d(3.8rem,0,0);
+	transition:-webkit-transform 1s;
 }
